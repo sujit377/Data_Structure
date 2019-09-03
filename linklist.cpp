@@ -15,6 +15,19 @@ struct linkedlist{
 		head = NULL;
 	}
 	
+	void reverse(){
+		node* curr = head;
+		node* prev = NULL; node* next = NULL;
+		while(curr != NULL){
+			next = curr->next;
+			curr->next = prev;
+			prev = curr;
+			curr = next;
+			
+		}
+		head = prev;
+	}
+	
 	void print(){
 		struct node* temp = head;
 		while(temp != NULL){
@@ -36,5 +49,7 @@ main(){
 	ll.push(4); 
 	ll.push(15); 
 	ll.push(85); 
+	ll.print();	
+	ll.reverse();
 	ll.print();	
 }
